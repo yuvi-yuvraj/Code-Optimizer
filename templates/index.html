@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OptiCode — C++ Code Optimizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">⌘</span><div><b>OptiCode</b><small>C++ COMPILER OPTIMIZER</small></div></div>
+  <div class="top-actions"><span class="status"><i></i> Engine ready</span><button class="ghost" id="sampleBtn">Load sample</button></div>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div><p class="eyebrow">COMPILER DESIGN • PROJECT WORKSPACE</p><h1>Make your code <span>smarter.</span></h1>
+    <p class="sub">Analyze, optimize, and understand your C++ code with classic compiler optimization techniques.</p></div>
+    <div class="hero-mark">C++<small>OPTIMIZATION ENGINE</small></div>
+  </section>
+  <section class="stats">
+    <div class="stat"><small>OPTIMIZATIONS APPLIED</small><strong id="statOpt">—</strong><span>Across all passes</span></div>
+    <div class="stat"><small>LINES REMOVED</small><strong id="statRemoved">—</strong><span>Dead code elimination</span></div>
+    <div class="stat"><small>OPTIMIZED LINES</small><strong id="statLines">—</strong><span>Output code size</span></div>
+    <div class="stat"><small>ACTIVE PASSES</small><strong>6</strong><span>Optimization techniques</span></div>
+  </section>
+  <section class="workspace">
+    <div class="panel">
+      <div class="panel-head"><div><span class="dot blue"></span><b>Original C++ Code</b><small>INPUT</small></div><button class="text-btn" id="clearBtn">Clear</button></div>
+      <textarea id="sourceCode" spellcheck="false" aria-label="Original C++ code" placeholder="// Enter your C++ code here..."></textarea>
+      <div class="panel-foot"><span id="inputCount">0 lines</span><span>Language: C++17</span></div>
+    </div>
+    <div class="panel output-panel">
+      <div class="panel-head"><div><span class="dot green"></span><b>Optimized Code</b><small>OUTPUT</small></div><button class="text-btn" id="copyBtn">Copy</button></div>
+      <textarea id="outputCode" spellcheck="false" aria-label="Optimized C++ code" placeholder="Your optimized code will appear here..." readonly></textarea>
+      <div class="panel-foot"><span id="outputCount">Waiting for optimization</span><button class="download" id="downloadBtn">↓ Download .cpp</button></div>
+    </div>
+  </section>
+  <div class="action-row">
+    <div><button class="primary" id="optimizeBtn">✦ Optimize Code</button><button class="secondary" id="validateBtn">✓ Validate C++</button></div>
+    <span id="message">Ready when you are.</span>
+  </div>
+  <section class="lower-grid">
+    <div class="panel report">
+      <div class="panel-head"><div><b>Optimization Report</b><small>PASS-BY-PASS ACTIVITY</small></div><span class="pill" id="reportCount">0 changes</span></div>
+      <div id="reportList" class="report-list"><div class="empty">Run the optimizer to see which techniques were applied.</div></div>
+    </div>
+    <div class="panel notes">
+      <div class="panel-head"><div><b>Optimization passes</b><small>WHAT THE ENGINE CHECKS</small></div></div>
+      <ul>
+        <li><b>Constant Folding</b><span>Evaluate constant expressions at compile time.</span></li>
+        <li><b>Constant & Copy Propagation</b><span>Substitute known values and copies.</span></li>
+        <li><b>Algebraic Simplification</b><span>Apply identities such as x + 0 → x.</span></li>
+        <li><b>Dead Code Elimination</b><span>Remove eligible unused constant assignments.</span></li>
+        <li><b>Common Subexpression Elimination</b><span>Reuse repeated arithmetic expressions.</span></li>
+        <li><b>Strength Reduction</b><span>Reserved as an extension point for safe loop-aware rules.</span></li>
+      </ul>
+    </div>
+  </section>
+  <p class="disclaimer">Educational C++ subset optimizer. Review and compile optimized code before using it in production.</p>
+</main>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
